@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	function appendLambImgSold(nr) {
 		var lambImgSold = ('<div class="col-xs-6 col-sm-4 col-md-3 threePicSold">' +
-							'<img class="img-responsive lambImgs" src="images/lamm'+nr+'-small.jpg"  alt="lamm skinn">' +
+							'<img class="img-responsive" src="images/lamm'+nr+'-small.jpg"  alt="lamm skinn">' +
 							'<paper-button class="bokBtn" raised>Bokad</paper-button>' +
 							'<hr>' +
 						'</div>')
