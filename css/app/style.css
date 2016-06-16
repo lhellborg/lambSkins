@@ -154,6 +154,12 @@ span {
 	font-weight: 300;
 }
 
+.threePicSold {
+    opacity: 0.4;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+    max-width: 100%;
+}
+
 .threePic {
     opacity: 0.6;
     filter: alpha(opacity=40); /* For IE8 and earlier */

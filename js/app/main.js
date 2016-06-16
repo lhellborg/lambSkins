@@ -3,22 +3,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	var myFirebaseRef = new Firebase("https://lambskin.firebaseio.com/");
 
-				// 	myFirebaseRef.set({
-				// 	lamb1: {
-				// 		nr: 1,
-				// 		name: "Lena",
-				// 		tel: "",
-				// 		email: ""
-				// 	}
-				// });
+				 //	myFirebaseRef.set({
+				//	lamb17: {
+				//		nr: 17,
+				//		name: "Linda",
+				 //		tel: "",
+					//	email: ""
+				//}
+				//});
 
 
 	myFirebaseRef.orderByChild("nr").on("value", function(snapshot) {
+		$('#mainPic').empty();
 		var obj = (snapshot.val());
 
 		for (i = 1; i < 16; i++) {
 			if (obj["lamb" + i]) {
 				console.log("lamb " + i + " redan sålt");
+				appendLambImgSold(i)
 			} else {
 				appendLambImg(i);
 			}
@@ -39,6 +41,15 @@ document.addEventListener('DOMContentLoaded', function () {
 		$(".section").append(lambImg);
 	}
 
+	function appendLambImgSold(nr) {
+		var lambImgSold = ('<div class="col-xs-6 col-sm-4 col-md-3 threePicSold">' +
+							'<img class="img-responsive lambImgs" src="images/lamm'+nr+'-small.jpg"  alt="lamm skinn">' +
+							'<paper-button class="bokBtn" raised>Bokad</paper-button>' +
+							'<hr>' +
+						'</div>')
+		$(".section").append(lambImgSold);
+	}
+
 	function appendModals(nr) {
 		var lambModals = ('<div class="modal fade" id="lamm'+nr+'" tabindex="-1" role="dialog" aria-labelledby="myModalLabel'+nr+'" aria-hidden="true">' +
 			  	'<div class="modal-dialog">'+
@@ -49,8 +60,8 @@ document.addEventListener('DOMContentLoaded', function () {
 			      		'</div>'+
 			      		'<form is="iron-form" id="form">' +
 							  '<paper-input type="text" label="Mitt namn" required auto-validate autocomplete="on" autofocus error-message="Fyll i ditt namn om du vill reservera" id="reserveratNamn'+nr+'" class="accountRequired"></paper-input>' +
-							  '<gold-phone-input label="_Mitt telefon nr" country-code="46" phone-number-pattern="" id="reserveratTel'+nr+'" class="accountRequired"></gold-phone-input>' +
-							  '<gold-email-input label="Min email adress" auto-validate id="reserveratMail'+nr+'" class="accountRequired"></gold-email-input>' +
+							  '<gold-phone-input label="_Mitt telefonnr" country-code="46" phone-number-pattern="" id="reserveratTel'+nr+'" class="accountRequired"></gold-phone-input>' +
+							  '<gold-email-input label="Min emailadress" auto-validate id="reserveratMail'+nr+'" class="accountRequired"></gold-email-input>' +
 							  '<paper-button type="submit" class="submitBtn" raised onclick="submitForm('+nr+')">Reservera</paper-button>' +
 							  '<paper-button class="closeBtn" data-dismiss="modal" raised >Stäng</paper-button>'+
 							'</form><br>'+
