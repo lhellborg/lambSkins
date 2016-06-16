@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	function appendLambImgSold(nr) {
 		var lambImgSold = ('<div class="col-xs-6 col-sm-4 col-md-3 threePicSold">' +
 							'<img class="img-responsive" src="images/lamm'+nr+'-small.jpg"  alt="lamm skinn">' +
-							'<paper-button class="bokBtn" raised>Bokad</paper-button>' +
+							'<paper-button class="bokBtn" raised id="soldBtn">Bokad</paper-button>' +
 							'<hr>' +
 						'</div>')
 		$(".section").append(lambImgSold);
@@ -60,12 +60,11 @@ document.addEventListener('DOMContentLoaded', function () {
 			      		'</div>'+
 			      		'<form is="iron-form" id="form">' +
 							  '<paper-input type="text" label="Mitt namn" required auto-validate autocomplete="on" autofocus error-message="Fyll i ditt namn om du vill reservera" id="reserveratNamn'+nr+'" class="accountRequired"></paper-input>' +
-							  '<gold-phone-input label="_Mitt telefonnr" country-code="46" phone-number-pattern="" id="reserveratTel'+nr+'" class="accountRequired"></gold-phone-input>' +
 							  '<gold-email-input label="Min emailadress" auto-validate id="reserveratMail'+nr+'" class="accountRequired"></gold-email-input>' +
-							  '<paper-button type="submit" class="submitBtn" raised onclick="submitForm('+nr+')">Reservera</paper-button>' +
+							  '<paper-button type="submit" class="submitBtn" id="reserveBtn'+nr+'" raised onclick="submitForm('+nr+')">Reservera</paper-button>' +
 							  '<paper-button class="closeBtn" data-dismiss="modal" raised >Stäng</paper-button>'+
-							'</form><br>'+
-							'<p id="storageValue'+nr+'"></p>'+
+						'</form><br>'+
+						'<p id="storageValue'+nr+'"></p>'+
 			    	'</div>'+
 			  	'</div>'+
 			'</div>')

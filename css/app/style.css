@@ -76,6 +76,10 @@ img {
     left: 50%;
 }
 
+#soldBtn {
+	cursor: default;
+}
+
 .submitBtn {
     margin-top: 10px;
     margin-bottom: 10px;

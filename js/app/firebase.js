@@ -12,15 +12,13 @@
 			document.getElementById(storVal).innerHTML = "";
 
 			resName = "reserveratNamn" + nr;
-			resTel = "reserveratTel" + nr;
 			resMail = "reserveratMail" + nr;
 			var name = document.getElementById(resName).value;
-			var tel = document.getElementById(resTel).value;
 			var mail = document.getElementById(resMail).value;
 
 			var reservedSkin = skinReservedTest(nr)
 
-			var valid = validateInput(name, tel, mail); //check all the required fields
+			var valid = validateInput(name, mail); //check all the required fields
 
 		    if (valid) {
 		    	if (reservedSkin) {
@@ -31,11 +29,13 @@
 				objectToInsert[firebaseRefChild] = {
 					nr: nr,
 					name: name,
-					tel: tel,
 					email: mail
 				};
 				myFirebaseRef.update(objectToInsert);
 				document.getElementById(storVal).innerHTML = "Bra val! Vi har reserverat det här till dig!";
+				var resBtn = "reserveBtn" + nr;
+				var reserveBtn = document.getElementById(resBtn);
+				reserveBtn.remove();
 				}
 			}
 			else {
@@ -61,12 +61,10 @@
 	}
 
 	// Since a required field that has never been "touched" will not show any error message, each input that is required has a class "accountRequired" that can be checked to see that the value is not empty.
-	function validateInput(name, tel, mail) {
+	function validateInput(name, mail) {
 		var isValid = true;
 
 		if (name === "") {
-			return isValid = false;
-		} else if (tel === "") {
 			return isValid = false;
 		} else if (mail === "") {
 			return isValid = false;
