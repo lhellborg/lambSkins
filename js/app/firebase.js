@@ -2,6 +2,7 @@
 
 	var myFirebaseRef = new Firebase("https://lambskin.firebaseio.com/");
 
+
 	function submitForm(nr) {
 
 		myFirebaseRef.on("value", function(snapshot) {
@@ -9,6 +10,7 @@
 
 			var storVal = "storageValue" + nr;
 			document.getElementById(storVal).innerHTML = "";
+
 			resName = "reserveratNamn" + nr;
 			resTel = "reserveratTel" + nr;
 			resMail = "reserveratMail" + nr;

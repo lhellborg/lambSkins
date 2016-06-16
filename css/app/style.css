@@ -105,6 +105,11 @@ img {
 .reserveText {
 	font-size: large;
 }
+
+.textRes {
+	margin-bottom: 0px;
+}
+
 h1 {
 	text-transform: uppercase;
 	font-weight: 100;
