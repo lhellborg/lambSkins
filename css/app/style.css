@@ -33,6 +33,10 @@ img {
 	border-radius: 5px;
 }
 
+.lambImgs {
+	cursor: pointer;
+}
+
 .menuRow {
 	background-color: rgb(245,229,207);
 }
@@ -51,6 +55,25 @@ img {
     border-width: 5px;
     background: radial-gradient(circle, yellow, orange, red);
     color: black;
+    border-color: darkorange;
+}
+
+.modal-body {
+	padding-bottom: 0px;
+}
+
+.modal-content {
+	max-width: 500px;
+}
+
+.bokBtn {
+	margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    position: relative;
+    width: 120px;
+    margin-left: -60px;
+    left: 50%;
 }
 
 .submitBtn {
@@ -61,6 +84,16 @@ img {
     width: 140px;
     margin-left: -70px;
     left: 50%;
+}
+
+.closeBtn {
+	margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    position: relative;
+    width: 80px;
+    margin-left: -40px;
+    left: 70%;
 }
 
 .namnInput {
@@ -150,7 +183,7 @@ h3 {
 
 p {
 	text-align: center;
-	margin-bottom: 0px;
+	margin-bottom: 10px;
 	font-size: large;
 }
 

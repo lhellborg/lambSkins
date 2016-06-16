@@ -33,5 +33,24 @@
 	.sectionName {
 		text-align: center;
 	}
+	.submitBtn {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    position: relative;
+    width: 140px;
+    margin-left: -70px;
+    left: 30%;
+}
+
+.closeBtn {
+	margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    position: relative;
+    width: 80px;
+    margin-left: -40px;
+    left: 60%;
+}
 }
 
