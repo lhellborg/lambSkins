@@ -3,6 +3,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	var myFirebaseRef = new Firebase("https://lambskin.firebaseio.com/");
 
+				// 	myFirebaseRef.set({
+				// 	lamb1: {
+				// 		nr: 1,
+				// 		name: "Lena",
+				// 		tel: "",
+				// 		email: ""
+				// 	}
+				// });
+
 
 	myFirebaseRef.orderByChild("nr").on("value", function(snapshot) {
 		var obj = (snapshot.val());
@@ -17,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	}, function (errorObject) {
 		console.log("The read failed: " + errorObject.code);
+		alert("Kunde tyvärr inte komma åt bokningarna, försök igen :-)")
 	});
 
 

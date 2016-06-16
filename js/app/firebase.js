@@ -44,7 +44,7 @@
 
 		}, function (errorObject) {
 		  console.log("The read failed: " + errorObject.code);
-		  alert("Kunde tyvärr inte komma åt databasen, försök igen :-)")
+		  alert("Kunde tyvärr inte komma åt bokningarna, försök igen :-)")
 		});
 
 
