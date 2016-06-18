@@ -72,3 +72,6 @@
 		return isValid;
 	};
 
+	function alertBox(nr) {
+		$("#lamm" + nr).modal("show");
+	}

@@ -202,3 +202,6 @@ p {
 	font-size: large;
 }
 
+.clickable {
+    cursor: pointer;
+}

@@ -33,9 +33,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 	function appendLambImg(nr) {
-		var lambImg = ('<div class="col-xs-6 col-sm-4 col-md-3 threePic">' +
-							'<img class="img-responsive lambImgs" src="images/lamm'+nr+'-small.jpg"  alt="lamm skinn" data-toggle="modal" data-target="#lamm'+nr+'">' +
-							'<paper-button class="bokBtn" raised data-toggle="modal" data-target="#lamm'+nr+'">Till bokning</paper-button>' +
+		var lambImg = ('<div class="col-xs-6 col-sm-4 col-md-3 threePic clickable">' +
+							'<img class="img-responsive lambImgs clickable" src="images/lamm'+nr+'-small.jpg"  alt="lamm skinn" onclick="alertBox('+nr+')">' +
+							'<paper-button class="bokBtn clickable" raised onclick="alertBox('+nr+')">Till bokning</paper-button>' +
 							'<hr>' +
 						'</div>')
 		$(".section").append(lambImg);
