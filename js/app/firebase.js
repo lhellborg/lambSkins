@@ -1,6 +1,19 @@
 
 
-	var myFirebaseRef = new Firebase("https://lambskin.firebaseio.com/");
+	// var myFirebaseRef = new Firebase("https://lambskin.firebaseio.com/");
+
+	  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBAPqqoCQ56-YVdnige3UbuYu8BFjWQypE",
+    authDomain: "lambskins-2e1e4.firebaseapp.com",
+    databaseURL: "https://lambskins-2e1e4.firebaseio.com",
+    projectId: "lambskins-2e1e4",
+    storageBucket: "lambskins-2e1e4.appspot.com",
+    messagingSenderId: "680442918069"
+  };
+  firebase.initializeApp(config);
+
+  var myFirebaseRef = firebase.database().ref();
 
 
 	function submitForm(nr) {

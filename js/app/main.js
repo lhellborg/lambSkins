@@ -1,16 +1,46 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
-	var myFirebaseRef = new Firebase("https://lambskin.firebaseio.com/");
+	// var myFirebaseRef = new Firebase("https://lambskin.firebaseio.com/");
 
-				 //	myFirebaseRef.set({
-				//	lamb17: {
-				//		nr: 17,
-				//		name: "Linda",
-				 //		tel: "",
-					//	email: ""
-				//}
-				//});
+
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBAPqqoCQ56-YVdnige3UbuYu8BFjWQypE",
+    authDomain: "lambskins-2e1e4.firebaseapp.com",
+    databaseURL: "https://lambskins-2e1e4.firebaseio.com",
+    projectId: "lambskins-2e1e4",
+    storageBucket: "lambskins-2e1e4.appspot.com",
+    messagingSenderId: "680442918069"
+  };
+  firebase.initializeApp(config);
+
+  var myFirebaseRef = firebase.database().ref();
+
+
+	myFirebaseRef.set({
+		lamb17: { nr: 17, name: "Linda", tel: "", email: "" }
+	});
+
+// // to initialize data
+//         myFirebaseRef.set({
+//         	1 : {'productName':'lamb1','nr':'1','color':'dark','reservedByName':"","reservedByTel":"","reservedByEmail":"","sold":false},
+//         	2 : {'productName':'lamb2','nr':'2','color':'dark','reservedByName':"","reservedByTel":"","reservedByEmail":"","sold":false},
+//         	3 : {'productName':'lamb3','nr':'3','color':'dark','reservedByName':"","reservedByTel":"","reservedByEmail":"","sold":false},
+//         	4 : {'productName':'lamb4','nr':'4','color':'dark','reservedByName':"","reservedByTel":"","reservedByEmail":"","sold":false},
+//         	5 : {'productName':'lamb3','nr':'5','color':'dark','reservedByName':"","reservedByTel":"","reservedByEmail":"","sold":false},
+//         	6 : {'productName':'lamb6','nr':'6','color':'medium','reservedByName':"","reservedByTel":"","reservedByEmail":"","sold":false},
+//         	7 : {'productName':'lamb7','nr':'7','color':'medium','reservedByName':"","reservedByTel":"","reservedByEmail":"","sold":false},
+//         	8 : {'productName':'lamb8','nr':'8','color':'medium','reservedByName':"","reservedByTel":"","reservedByEmail":"","sold":false},
+//         	9 : {'productName':'lamb9','nr':'9','color':'white','reservedByName':"","reservedByTel":"","reservedByEmail":"","sold":false},
+//         	10 : {'productName':'lamb10','nr':'10','color':'white','reservedByName':"","reservedByTel":"","reservedByEmail":"","sold":false},
+//         	11 : {'productName':'lamb11','nr':'11','color':'white','reservedByName':"","reservedByTel":"","reservedByEmail":"","sold":false},
+//         	12 : {'productName':'lamb12','nr':'12','color':'white','reservedByName':"","reservedByTel":"","reservedByEmail":"","sold":false},
+//         	13 : {'productName':'lamb13','nr':'13','color':'white','reservedByName':"","reservedByTel":"","reservedByEmail":"","sold":false},
+//         	14 : {'productName':'lamb14','nr':'14','color':'white','reservedByName':"","reservedByTel":"","reservedByEmail":"","sold":false},
+//         	15 : {'productName':'lamb15','nr':'15','color':'white','reservedByName':"","reservedByTel":"","reservedByEmail":"","sold":false}
+//         });
+
 
 
 	myFirebaseRef.orderByChild("nr").on("value", function(snapshot) {
