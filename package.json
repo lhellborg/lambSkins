@@ -14,7 +14,8 @@
     "grunt-contrib-nodeunit": "~0.4.1",
     "grunt-contrib-uglify": "~0.5.0",
     "grunt-mkdir": "~0.1.2",
-    "grunt-responsive-images": "^0.1.7"
+    "grunt-responsive-images": "^0.1.7",
+    "grunt-serve": "^0.1.6"
   },
   "dependencies": {
     "grunt-contrib-clean": "^0.6.0",
@@ -23,4 +24,3 @@
     "grunt-responsive-images": "^0.1.7"
   }
 }
-

@@ -71,8 +71,23 @@ module.exports = function(grunt) {
         }]
       },
     },
+
+    serve: {
+        options: {
+            port: 9003
+        }
+    }
+
+
   });
-  
+
+
+
+// END grunt-initconfig
+
+  grunt.loadNpmTasks('grunt-serve');
+  grunt.registerTask('serve', ['serve'])
+
   grunt.loadNpmTasks('grunt-responsive-images');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
@@ -80,3 +95,5 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['clean', 'mkdir', 'copy', 'responsive_images']);
 
 };
+
+
