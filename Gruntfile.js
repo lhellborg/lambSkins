@@ -72,12 +72,18 @@ module.exports = function(grunt) {
       },
     },
 
-    serve: {
-        options: {
-            port: 9003
+    jshint: {
+      files: ['Gruntfile.js', 'js/**/*.js'],
+      options: {
+        globals: {
+          jQuery: true
         }
+      }
+    },
+    watch: {
+      files: ['<%= jshint.files %>'],
+      tasks: ['jshint']
     }
-
 
   });
 
@@ -85,8 +91,11 @@ module.exports = function(grunt) {
 
 // END grunt-initconfig
 
-  grunt.loadNpmTasks('grunt-serve');
-  grunt.registerTask('serve', ['serve'])
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+
+  grunt.registerTask('serve', ['jshint']);
+
 
   grunt.loadNpmTasks('grunt-responsive-images');
   grunt.loadNpmTasks('grunt-contrib-clean');
