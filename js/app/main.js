@@ -1,5 +1,5 @@
 
-document.addEventListener('DOMContentLoaded', function () {
+$(document).ready(function () {
 
 	// var myFirebaseRef = new Firebase("https://lambskin.firebaseio.com/");
 
