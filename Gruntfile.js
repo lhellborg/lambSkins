@@ -71,8 +71,32 @@ module.exports = function(grunt) {
         }]
       },
     },
+
+    jshint: {
+      files: ['Gruntfile.js', 'js/**/*.js'],
+      options: {
+        globals: {
+          jQuery: true
+        }
+      }
+    },
+    watch: {
+      files: ['<%= jshint.files %>'],
+      tasks: ['jshint']
+    }
+
   });
-  
+
+
+
+// END grunt-initconfig
+
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+
+  grunt.registerTask('serve', ['jshint']);
+
+
   grunt.loadNpmTasks('grunt-responsive-images');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-copy');
@@ -80,3 +104,5 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['clean', 'mkdir', 'copy', 'responsive_images']);
 
 };
+
+

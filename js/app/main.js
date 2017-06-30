@@ -6,48 +6,52 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Initialize Firebase
   var config = {
-    apiKey: "AIzaSyBAPqqoCQ56-YVdnige3UbuYu8BFjWQypE",
-    authDomain: "lambskins-2e1e4.firebaseapp.com",
-    databaseURL: "https://lambskins-2e1e4.firebaseio.com",
-    projectId: "lambskins-2e1e4",
-    storageBucket: "lambskins-2e1e4.appspot.com",
-    messagingSenderId: "680442918069"
+    apiKey: "AIzaSyBoYLZec85wm9rxqXJUm2CGXHof5P0nMLE",
+    authDomain: "lambskin-6b71c.firebaseapp.com",
+    databaseURL: "https://lambskin-6b71c.firebaseio.com",
+    projectId: "lambskin-6b71c",
+    storageBucket: "",
+    messagingSenderId: "344391921798"
   };
   firebase.initializeApp(config);
 
-  var myFirebaseRef = firebase.database().ref();
+
+  window.myFirebaseRef = firebase.database().ref();
 
 
-	myFirebaseRef.set({
-		lamb17: { nr: 17, name: "Linda", tel: "", email: "" }
-	});
-
-// // to initialize data
-//         myFirebaseRef.set({
-//         	1 : {'productName':'lamb1','nr':'1','color':'dark','reservedByName':"","reservedByTel":"","reservedByEmail":"","sold":false},
-//         	2 : {'productName':'lamb2','nr':'2','color':'dark','reservedByName':"","reservedByTel":"","reservedByEmail":"","sold":false},
-//         	3 : {'productName':'lamb3','nr':'3','color':'dark','reservedByName':"","reservedByTel":"","reservedByEmail":"","sold":false},
-//         	4 : {'productName':'lamb4','nr':'4','color':'dark','reservedByName':"","reservedByTel":"","reservedByEmail":"","sold":false},
-//         	5 : {'productName':'lamb3','nr':'5','color':'dark','reservedByName':"","reservedByTel":"","reservedByEmail":"","sold":false},
-//         	6 : {'productName':'lamb6','nr':'6','color':'medium','reservedByName':"","reservedByTel":"","reservedByEmail":"","sold":false},
-//         	7 : {'productName':'lamb7','nr':'7','color':'medium','reservedByName':"","reservedByTel":"","reservedByEmail":"","sold":false},
-//         	8 : {'productName':'lamb8','nr':'8','color':'medium','reservedByName':"","reservedByTel":"","reservedByEmail":"","sold":false},
-//         	9 : {'productName':'lamb9','nr':'9','color':'white','reservedByName':"","reservedByTel":"","reservedByEmail":"","sold":false},
-//         	10 : {'productName':'lamb10','nr':'10','color':'white','reservedByName':"","reservedByTel":"","reservedByEmail":"","sold":false},
-//         	11 : {'productName':'lamb11','nr':'11','color':'white','reservedByName':"","reservedByTel":"","reservedByEmail":"","sold":false},
-//         	12 : {'productName':'lamb12','nr':'12','color':'white','reservedByName':"","reservedByTel":"","reservedByEmail":"","sold":false},
-//         	13 : {'productName':'lamb13','nr':'13','color':'white','reservedByName':"","reservedByTel":"","reservedByEmail":"","sold":false},
-//         	14 : {'productName':'lamb14','nr':'14','color':'white','reservedByName':"","reservedByTel":"","reservedByEmail":"","sold":false},
-//         	15 : {'productName':'lamb15','nr':'15','color':'white','reservedByName':"","reservedByTel":"","reservedByEmail":"","sold":false}
-//         });
+  var data = {
+  		lamb17: { nr: 17, name: "Linda", tel: "", email: "" }
+  	};
 
 
+
+   // var data = {
+   //      	lamb1 : {'productName':'lamb1','nr':'1','color':'dark','name':"","tel":"","email":"","sold":false},
+   //      	lamb2 : {'productName':'lamb2','nr':'2','color':'dark','name':"","tel":"","email":"","sold":false},
+   //      	lamb3 : {'productName':'lamb3','nr':'3','color':'dark','name':"","tel":"","email":"","sold":false},
+   //      	lamb4 : {'productName':'lamb4','nr':'4','color':'dark','name':"","tel":"","email":"","sold":false},
+   //      	lamb5 : {'productName':'lamb3','nr':'5','color':'dark','name':"","tel":"","email":"","sold":false},
+   //      	lamb6 : {'productName':'lamb6','nr':'6','color':'dark','name':"","tel":"","email":"","sold":false},
+   //      	lamb7 : {'productName':'lamb7','nr':'7','color':'dark','name':"","tel":"","email":"","sold":false},
+   //      	lamb8 : {'productName':'lamb8','nr':'8','color':'dark','name':"","tel":"","email":"","sold":false},
+   //      	lamb9 : {'productName':'lamb9','nr':'9','color':'medium','name':"","tel":"","email":"","sold":false},
+   //      	lamb10 : {'productName':'lamb10','nr':'10','color':'white','name':"","tel":"","email":"","sold":false},
+   //      	lamb11 : {'productName':'lamb11','nr':'11','color':'white','name':"","tel":"","email":"","sold":false},
+   //      	lamb12 : {'productName':'lamb12','nr':'12','color':'white','name':"","tel":"","email":"","sold":false},
+   //      	lamb13 : {'productName':'lamb13','nr':'13','color':'white','name':"","tel":"","email":"","sold":false},
+   //      	lamb14 : {'productName':'lamb14','nr':'14','color':'white','name':"","tel":"","email":"","sold":false},
+   //      	lamb15 : {'productName':'lamb15','nr':'15','color':'white','name':"","tel":"","email":"","sold":false},
+   //      	lamb16 : {'productName':'lamb15','nr':'16','color':'white','name':"","tel":"","email":"","sold":false}
+   //      };
+
+// to initialize data
+	myFirebaseRef.set(data);
 
 	myFirebaseRef.orderByChild("nr").on("value", function(snapshot) {
 		$('#mainPic').empty();
 		var obj = (snapshot.val());
 
-		for (i = 1; i < 16; i++) {
+		for (i = 1; i < 17; i++) {
 			if (obj["lamb" + i]) {
 				console.log("lamb " + i + " redan sålt");
 				appendLambImgSold(i)
@@ -101,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		$(".modals").append(lambModals);
 	}
 
-	for (i = 1; i < 16; i++) {
+	for (i = 1; i < 17; i++) {
 	    appendModals(i);
 	}
 
