@@ -5,18 +5,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBoYLZec85wm9rxqXJUm2CGXHof5P0nMLE",
-    authDomain: "lambskin-6b71c.firebaseapp.com",
-    databaseURL: "https://lambskin-6b71c.firebaseio.com",
-    projectId: "lambskin-6b71c",
-    storageBucket: "",
-    messagingSenderId: "344391921798"
-  };
-  firebase.initializeApp(config);
+ // var config = {
+ //   apiKey: "AIzaSyBoYLZec85wm9rxqXJUm2CGXHof5P0nMLE",
+ //   authDomain: "lambskin-6b71c.firebaseapp.com",
+ //   databaseURL: "https://lambskin-6b71c.firebaseio.com",
+ //   projectId: "lambskin-6b71c",
+ //)   storageBucket: "",
+  //  messagingSenderId: "344391921798"
+  //};
+  //firebase.initializeApp(config);
 
 
-  window.myFirebaseRef = firebase.database().ref();
+ // window.myFirebaseRef = firebase.database().ref();
 
 
   // var data = {

@@ -1,7 +1,17 @@
 
 
+  var config = {
+    apiKey: "AIzaSyBoYLZec85wm9rxqXJUm2CGXHof5P0nMLE",
+    authDomain: "lambskin-6b71c.firebaseapp.com",
+    databaseURL: "https://lambskin-6b71c.firebaseio.com",
+    projectId: "lambskin-6b71c",
+    storageBucket: "",
+    messagingSenderId: "344391921798"
+  };
+  firebase.initializeApp(config);
 
-  // var myFirebaseRef = firebase.database().ref();
+
+  window.myFirebaseRef = firebase.database().ref();
 
 	  // Initialize Firebase
 
