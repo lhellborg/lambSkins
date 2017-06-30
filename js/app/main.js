@@ -19,9 +19,9 @@ document.addEventListener('DOMContentLoaded', function () {
   window.myFirebaseRef = firebase.database().ref();
 
 
-  var data = {
-  		lamb17: { nr: 17, name: "Linda", tel: "", email: "" }
-  	};
+  // var data = {
+  // 		lamb17: { nr: 17, name: "Linda", tel: "", email: "" }
+  // 	};
 
 
 
@@ -45,13 +45,13 @@ document.addEventListener('DOMContentLoaded', function () {
    //      };
 
 // to initialize data
-	myFirebaseRef.set(data);
+	// myFirebaseRef.set(data);
 
 	myFirebaseRef.orderByChild("nr").on("value", function(snapshot) {
 		$('#mainPic').empty();
 		var obj = (snapshot.val());
 
-		for (i = 1; i < 17; i++) {
+		for (i = 1; i < 16; i++) {
 			if (obj["lamb" + i]) {
 				console.log("lamb " + i + " redan sålt");
 				appendLambImgSold(i)
@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		$(".modals").append(lambModals);
 	}
 
-	for (i = 1; i < 17; i++) {
+	for (i = 1; i < 16; i++) {
 	    appendModals(i);
 	}
 
